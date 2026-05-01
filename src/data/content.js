@@ -1,25 +1,24 @@
 // ============================================================
 // EDITA AQUÍ TUS DATOS PERSONALES
 // ============================================================
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 export const ME = {
-  name: "Tu Nombre",
-  alias: "@tu_usuario",
-  role: "Full Stack Developer",
-  location: "Motril, Andalucía",
-  yearsOfExperience: 4,
-  bio: "Desarrollador full stack con foco en interfaces que se sienten vivas y backends que aguantan. Me obsesionan los detalles de UX, las bases de datos bien indexadas y el código que otra persona pueda leer sin maldecirte.",
+  name: "Javier Carreira",
+  alias: "@SupernovaIa",
+  role: "AI Engineer",
+  location: "España",
+  yearsOfExperience: 3,
+  bio: "Placeholder bio — actualizar pronto.",
   longBio: [
-    "Empecé tocando HTML en el instituto, pasé por una etapa larga de PHP en agencia, y desde 2022 vivo principalmente en el ecosistema TypeScript/React/Node.",
-    "Me gusta especialmente la zona donde el frontend y el backend se tocan: diseño de APIs, validación, autenticación, sincronización de estado. Ahí es donde se juega la calidad de un producto.",
-    "Fuera del código: senderismo por Sierra Nevada, fotografía analógica y demasiado café.",
+    "Placeholder párrafo 1.",
+    "Placeholder párrafo 2.",
+    "Placeholder párrafo 3.",
   ],
-  email: "tu.email@ejemplo.com",
+  email: "jav.racec@gmail.com",
   social: [
-    { id: "github",   label: "GitHub",   handle: "github.com/tuusuario",   url: "https://github.com",   Icon: Github },
-    { id: "linkedin", label: "LinkedIn", handle: "linkedin.com/in/tu",     url: "https://linkedin.com", Icon: Linkedin },
-    { id: "twitter",  label: "Twitter",  handle: "@tu_usuario",            url: "https://twitter.com",  Icon: Twitter },
+    { id: "github",   label: "GitHub",   handle: "github.com/SupernovaIa",          url: "https://github.com/SupernovaIa",                Icon: Github },
+    { id: "linkedin", label: "LinkedIn", handle: "linkedin.com/in/javier-carreira-c", url: "https://www.linkedin.com/in/javier-carreira-c/", Icon: Linkedin },
   ],
 };
 
@@ -96,29 +95,31 @@ export const EXPERIENCE = [
 ];
 
 export const STACK_ITEMS = [
-  { id: "core", name: "TypeScript", ring: 0, angle: 0, status: "completed",
-    description: "Mi lenguaje principal. Tipado estricto en todo lo que toco." },
+  { id: "core", name: "Python", ring: 0, angle: 0, status: "completed",
+    description: "Mi lenguaje principal. Desde scripts rápidos hasta sistemas de producción." },
 
-  { id: "react",    name: "React",    ring: 1, angle: 30,  status: "completed",
-    description: "Componentes, hooks, suspense. La base de mis frontends." },
-  { id: "next",     name: "Next.js",  ring: 1, angle: 110, status: "completed",
-    description: "App router, server components, server actions." },
-  { id: "tailwind", name: "Tailwind", ring: 1, angle: 200, status: "completed",
-    description: "Utility-first. Lo uso en el 90% de mis proyectos." },
-  { id: "node",     name: "Node.js",  ring: 1, angle: 290, status: "completed",
-    description: "Backend en Fastify y Hono principalmente." },
+  { id: "langchain",  name: "LangChain",  ring: 1, angle: 30,  status: "completed",
+    description: "Cadenas, agentes y herramientas para construir sobre LLMs." },
+  { id: "langgraph",  name: "LangGraph",  ring: 1, angle: 120, status: "completed",
+    description: "Agentes con estado y flujos multi-step complejos." },
+  { id: "fastapi",    name: "FastAPI",    ring: 1, angle: 210, status: "completed",
+    description: "APIs asíncronas, tipado con Pydantic, docs automáticas." },
+  { id: "openai",     name: "OpenAI API", ring: 1, angle: 300, status: "completed",
+    description: "GPT-4, embeddings, function calling y fine-tuning." },
 
-  { id: "pg",     name: "PostgreSQL", ring: 2, angle: 60,  status: "completed",
-    description: "Mi base de datos por defecto. Drizzle como ORM." },
-  { id: "redis",  name: "Redis",      ring: 2, angle: 150, status: "completed",
-    description: "Caché, colas y rate limiting." },
-  { id: "docker", name: "Docker",     ring: 2, angle: 240, status: "active",
-    description: "Profundizando en multi-stage builds y orquestación." },
-  { id: "aws",    name: "AWS",        ring: 2, angle: 330, status: "available",
-    description: "Lambda, RDS, S3. Con margen para crecer." },
+  { id: "pg",       name: "PostgreSQL", ring: 2, angle: 60,  status: "completed",
+    description: "Base de datos relacional con pgvector para búsqueda semántica." },
+  { id: "chroma",   name: "ChromaDB",   ring: 2, angle: 150, status: "completed",
+    description: "Vector store para RAG y retrieval semántico." },
+  { id: "docker",   name: "Docker",     ring: 2, angle: 240, status: "active",
+    description: "Contenedores para aislar y desplegar servicios de IA." },
+  { id: "hugging",  name: "HuggingFace",ring: 2, angle: 330, status: "completed",
+    description: "Modelos open-source, transformers y datasets." },
 
-  { id: "rust", name: "Rust",       ring: 3, angle: 90,  status: "active",
-    description: "Aprendiéndolo para herramientas CLI y procesos críticos." },
-  { id: "k8s",  name: "Kubernetes", ring: 3, angle: 270, status: "available",
-    description: "Lo justo para no sentirme perdido en charlas de DevOps." },
+  { id: "mlflow",  name: "MLflow",     ring: 3, angle: 90,  status: "active",
+    description: "Tracking de experimentos y registro de modelos." },
+  { id: "aws",     name: "AWS",        ring: 3, angle: 210, status: "available",
+    description: "Bedrock, Lambda y S3 para despliegues en la nube." },
+  { id: "rag",     name: "RAG",        ring: 3, angle: 330, status: "completed",
+    description: "Retrieval-Augmented Generation: chunking, embedding, retrieval." },
 ];
