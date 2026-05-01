@@ -13,9 +13,9 @@ export const STATUS_COLORS = {
 };
 
 export const NAV = [
-  { id: "home",     label: "Inicio",    Icon: Home },
-  { id: "projects", label: "Proyectos", Icon: FolderGit2 },
-  { id: "stack",    label: "Stack",     Icon: Compass },
-  { id: "about",    label: "Sobre mí",  Icon: User },
-  { id: "contact",  label: "Contacto",  Icon: Mail },
+  { id: "home",     label: "Inicio",    Icon: Home,       path: "/" },
+  { id: "projects", label: "Proyectos", Icon: FolderGit2, path: "/projects" },
+  { id: "stack",    label: "Stack",     Icon: Compass,    path: "/stack" },
+  { id: "about",    label: "Sobre mí",  Icon: User,       path: "/about" },
+  { id: "contact",  label: "Contacto",  Icon: Mail,       path: "/contact" },
 ];

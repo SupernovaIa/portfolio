@@ -3,11 +3,11 @@ import { Menu, X } from "lucide-react";
 import { ME } from "../data/content";
 import { NAV } from "../data/config";
 
-export default function Sidebar({ section, setSection }) {
+export default function Sidebar({ section, onNavigate }) {
   const [open, setOpen] = useState(false);
 
   function navigate(id) {
-    setSection(id);
+    onNavigate(id);
     setOpen(false);
   }
 
