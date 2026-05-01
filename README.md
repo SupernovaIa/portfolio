@@ -99,7 +99,7 @@ npm run preview     # sirve dist/ para verificar antes de desplegar
 
 - [ ] **Contenido** — rellenar bio, proyectos reales y experiencia en `src/data/content.js`
 - [ ] **Formulario** — conseguir access key en web3forms.com y añadirla a `.env` (y al panel del hosting)
-- [ ] **SEO** — añadir meta tags (description, og:title, og:image) en `index.html`
+- [ ] **SEO** — actualizar la URL canónica y `og:image` en `index.html` con el dominio real, y crear `public/og-image.png` (1200×630 px)
 - [ ] **Favicon** — sustituir `public/favicon.svg` por uno propio
 
 ## Licencia
