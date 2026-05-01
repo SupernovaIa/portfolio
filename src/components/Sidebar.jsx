@@ -1,46 +1,67 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { ME } from "../data/content";
 import { NAV } from "../data/config";
 
 export default function Sidebar({ section, setSection }) {
+  const [open, setOpen] = useState(false);
+
+  function navigate(id) {
+    setSection(id);
+    setOpen(false);
+  }
+
   return (
-    <aside className="pf-sidebar">
-      <div className="pf-brand">
-        <div className="pf-brand-mark">
-          <span className="pf-brand-pulse" />
-        </div>
-        <div className="pf-brand-text">
-          <span className="pf-brand-name">{ME.name}</span>
-          <span className="pf-brand-role">{ME.role}</span>
-        </div>
-      </div>
+    <>
+      <button
+        className="pf-hamburger"
+        onClick={() => setOpen((o) => !o)}
+        aria-label={open ? "Cerrar menú" : "Abrir menú"}
+      >
+        {open ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+      </button>
 
-      <nav className="pf-nav">
-        {NAV.map((n) => (
-          <button
-            key={n.id}
-            className={`pf-nav-item ${section === n.id ? "active" : ""}`}
-            onClick={() => setSection(n.id)}
-          >
-            <n.Icon size={15} strokeWidth={1.5} />
-            <span>{n.label}</span>
-            {section === n.id && <span className="pf-nav-indicator" />}
-          </button>
-        ))}
-      </nav>
+      {open && <div className="pf-overlay" onClick={() => setOpen(false)} />}
 
-      <div className="pf-sidebar-footer">
-        <div className="pf-status-line">
-          <span className="pf-status-dot" />
-          <span>disponible para proyectos</span>
+      <aside className={`pf-sidebar${open ? " open" : ""}`}>
+        <div className="pf-brand">
+          <div className="pf-brand-mark">
+            <span className="pf-brand-pulse" />
+          </div>
+          <div className="pf-brand-text">
+            <span className="pf-brand-name">{ME.name}</span>
+            <span className="pf-brand-role">{ME.role}</span>
+          </div>
         </div>
-        <div className="pf-social">
-          {ME.social.map((s) => (
-            <a key={s.id} href={s.url} target="_blank" rel="noopener noreferrer" title={s.label}>
-              <s.Icon size={14} strokeWidth={1.5} />
-            </a>
+
+        <nav className="pf-nav">
+          {NAV.map((n) => (
+            <button
+              key={n.id}
+              className={`pf-nav-item ${section === n.id ? "active" : ""}`}
+              onClick={() => navigate(n.id)}
+            >
+              <n.Icon size={15} strokeWidth={1.5} />
+              <span>{n.label}</span>
+              {section === n.id && <span className="pf-nav-indicator" />}
+            </button>
           ))}
+        </nav>
+
+        <div className="pf-sidebar-footer">
+          <div className="pf-status-line">
+            <span className="pf-status-dot" />
+            <span>disponible para proyectos</span>
+          </div>
+          <div className="pf-social">
+            {ME.social.map((s) => (
+              <a key={s.id} href={s.url} target="_blank" rel="noopener noreferrer" title={s.label}>
+                <s.Icon size={14} strokeWidth={1.5} />
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </>
   );
 }
