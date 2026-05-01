@@ -3,20 +3,35 @@ import { Mail, ArrowUpRight, Send } from "lucide-react";
 import { ME } from "../data/content";
 import { SectionHeader } from "../components/Shared";
 
-export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
-  const handleSubmit = () => {
+export default function Contact() {
+  const [form, setForm]     = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+
+  async function handleSubmit() {
     if (!form.name || !form.email || !form.message) return;
-    // TODO: conecta esto a tu backend o servicio de formularios
-    // (Formspree, Resend, Web3Forms, una API propia, etc.)
-    setSent(true);
-    setTimeout(() => {
-      setSent(false);
-      setForm({ name: "", email: "", message: "" });
-    }, 3000);
-  };
+    setStatus("loading");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ access_key: WEB3FORMS_KEY, ...form }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
+  }
 
   return (
     <section className="pf-section">
@@ -76,8 +91,15 @@ export default function Contact() {
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               placeholder="Cuéntame en qué andas..." />
           </div>
-          <button className="pf-btn primary full" onClick={handleSubmit} disabled={sent}>
-            {sent ? "✓ Mensaje enviado" : <>Enviar mensaje <Send size={13} /></>}
+          <button
+            className="pf-btn primary full"
+            onClick={handleSubmit}
+            disabled={status === "loading" || status === "success"}
+          >
+            {status === "loading" && "Enviando…"}
+            {status === "success" && "✓ Mensaje enviado"}
+            {status === "error"   && "Error al enviar — intenta de nuevo"}
+            {status === "idle"    && <><span>Enviar mensaje</span><Send size={13} /></>}
           </button>
         </div>
       </div>
