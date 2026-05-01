@@ -47,11 +47,14 @@ portfolio/
 
 ## Formulario de contacto
 
-El formulario de la sección de contacto es funcional en el frontend pero no envía nada todavía. En `src/sections/Contact.jsx`, dentro de `handleSubmit`, conéctalo a tu servicio preferido. Algunas opciones sin backend propio:
+El formulario está conectado a [Web3Forms](https://web3forms.com). Para activarlo:
 
-- **Formspree** (`https://formspree.io`) — el más rápido de configurar
-- **Web3Forms** (`https://web3forms.com`) — gratis con API key
-- **Resend** (`https://resend.com`) — si quieres una función serverless propia
+1. Ve a web3forms.com y pon tu email → te mandan un access key al instante.
+2. Crea un fichero `.env` en la raíz del proyecto:
+   ```
+   VITE_WEB3FORMS_KEY=tu_access_key_aqui
+   ```
+3. Al desplegar, añade la misma variable de entorno en el panel de Vercel/Netlify.
 
 ## Desplegar
 
@@ -91,6 +94,13 @@ Luego usa el workflow de GitHub Actions oficial de Vite (`https://vitejs.dev/gui
 npm run build       # genera dist/
 npm run preview     # sirve dist/ para verificar antes de desplegar
 ```
+
+## Pendiente antes de publicar
+
+- [ ] **Contenido** — rellenar bio, proyectos reales y experiencia en `src/data/content.js`
+- [ ] **Formulario** — conseguir access key en web3forms.com y añadirla a `.env` (y al panel del hosting)
+- [ ] **SEO** — añadir meta tags (description, og:title, og:image) en `index.html`
+- [ ] **Favicon** — sustituir `public/favicon.svg` por uno propio
 
 ## Licencia
 
