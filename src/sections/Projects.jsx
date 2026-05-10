@@ -35,7 +35,9 @@ export default function Projects() {
       </div>
 
       <div className="pf-projects-grid">
-        {filtered.map((p) => <ProjectCard key={p.id} project={p} />)}
+        {filtered.map((p, i) => (
+          <ProjectCard key={p.id} project={p} revealDelay={i} />
+        ))}
       </div>
     </section>
   );

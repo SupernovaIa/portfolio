@@ -5,6 +5,7 @@ import { NAV } from "../data/config";
 
 export default function Sidebar({ section, onNavigate }) {
   const [open, setOpen] = useState(false);
+  const activeIndex = Math.max(0, NAV.findIndex((n) => n.id === section));
 
   function navigate(id) {
     onNavigate(id);
@@ -34,7 +35,8 @@ export default function Sidebar({ section, onNavigate }) {
           </div>
         </div>
 
-        <nav className="pf-nav">
+        <nav className="pf-nav" style={{ "--active-index": activeIndex }}>
+          <span className="pf-nav-rail" aria-hidden />
           {NAV.map((n) => (
             <button
               key={n.id}
@@ -43,7 +45,6 @@ export default function Sidebar({ section, onNavigate }) {
             >
               <n.Icon size={15} strokeWidth={1.5} />
               <span>{n.label}</span>
-              {section === n.id && <span className="pf-nav-indicator" />}
             </button>
           ))}
         </nav>

@@ -1,5 +1,5 @@
 import { ME, EXPERIENCE } from "../data/content";
-import { SectionHeader } from "../components/Shared";
+import { SectionHeader, Reveal } from "../components/Shared";
 
 export default function About() {
   return (
@@ -19,7 +19,7 @@ export default function About() {
           <h3 className="pf-side-title">Trayectoria</h3>
           <ol className="pf-timeline">
             {EXPERIENCE.map((e, i) => (
-              <li key={i} className="pf-timeline-item">
+              <Reveal as="li" key={i} delay={i} className="pf-timeline-item">
                 <div className="pf-timeline-marker">
                   <span className="pf-timeline-dot" />
                   {i < EXPERIENCE.length - 1 && <span className="pf-timeline-line" />}
@@ -30,7 +30,7 @@ export default function About() {
                   <span className="pf-timeline-company">{e.company}</span>
                   <p>{e.description}</p>
                 </div>
-              </li>
+              </Reveal>
             ))}
           </ol>
         </div>

@@ -1,4 +1,5 @@
 import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { useReveal } from "../hooks/useReveal";
 
 export function SectionHeader({ eyebrow, title, subtitle }) {
   return (
@@ -12,9 +13,30 @@ export function SectionHeader({ eyebrow, title, subtitle }) {
   );
 }
 
-export function ProjectCard({ project, compact }) {
+export function Reveal({ as: Tag = "div", delay = 0, className = "", children, ...rest }) {
+  const { ref, shown } = useReveal();
+  const style = delay ? { "--reveal-delay": delay } : undefined;
   return (
-    <article className={`pf-project ${compact ? "compact" : ""}`}>
+    <Tag
+      ref={ref}
+      className={`pf-reveal ${shown ? "in" : ""} ${className}`.trim()}
+      style={style}
+      {...rest}
+    >
+      {children}
+    </Tag>
+  );
+}
+
+export function ProjectCard({ project, compact, revealDelay }) {
+  const { ref, shown } = useReveal();
+  const style = revealDelay ? { "--reveal-delay": revealDelay } : undefined;
+  return (
+    <article
+      ref={ref}
+      style={style}
+      className={`pf-project pf-reveal ${shown ? "in" : ""} ${compact ? "compact" : ""}`}
+    >
       <div className="pf-project-header">
         <div className={`pf-project-status ${project.status}`}>
           {project.status === "active" ? "en curso" : "finalizado"}

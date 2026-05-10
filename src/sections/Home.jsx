@@ -8,19 +8,19 @@ export default function Home({ onNavigate }) {
     <section className="pf-section pf-home">
       <div className="pf-home-grid">
         <div className="pf-home-content">
-          <div className="pf-eyebrow">
+          <div className="pf-eyebrow pf-fade-up pf-stagger-1">
             <span className="pf-eyebrow-dot" /> portfolio · {new Date().getFullYear()}
           </div>
 
-          <h1 className="pf-hero-title">
+          <h1 className="pf-hero-title pf-fade-up pf-stagger-2">
             Construyo<br />
             <span className="pf-accent">interfaces vivas</span><br />
             y backends sólidos.
           </h1>
 
-          <p className="pf-hero-bio">{ME.bio}</p>
+          <p className="pf-hero-bio pf-fade-up pf-stagger-3">{ME.bio}</p>
 
-          <div className="pf-hero-meta">
+          <div className="pf-hero-meta pf-fade-up pf-stagger-4">
             <div className="pf-meta-item">
               <MapPin size={13} strokeWidth={1.5} />
               <span>{ME.location}</span>
@@ -35,7 +35,7 @@ export default function Home({ onNavigate }) {
             </div>
           </div>
 
-          <div className="pf-hero-cta">
+          <div className="pf-hero-cta pf-fade-up pf-stagger-5">
             <button className="pf-btn primary" onClick={() => onNavigate("projects")}>
               Ver proyectos <ArrowUpRight size={14} />
             </button>
@@ -45,7 +45,7 @@ export default function Home({ onNavigate }) {
           </div>
         </div>
 
-        <div className="pf-home-visual">
+        <div className="pf-home-visual pf-fade-up pf-stagger-3">
           <OrbitalBadge />
         </div>
       </div>
@@ -53,8 +53,8 @@ export default function Home({ onNavigate }) {
       <div className="pf-home-featured">
         <h2 className="pf-section-label">Proyectos destacados</h2>
         <div className="pf-featured-grid">
-          {PROJECTS.filter((p) => p.featured).map((p) => (
-            <ProjectCard key={p.id} project={p} compact />
+          {PROJECTS.filter((p) => p.featured).map((p, i) => (
+            <ProjectCard key={p.id} project={p} compact revealDelay={i} />
           ))}
         </div>
       </div>
