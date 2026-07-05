@@ -14,8 +14,8 @@ export default function Home({ onNavigate }) {
 
           <h1 className="pf-hero-title pf-fade-up pf-stagger-2">
             Construyo<br />
-            <span className="pf-accent">interfaces vivas</span><br />
-            y backends sólidos.
+            <span className="pf-accent">agentes de IA</span><br />
+            y sistemas que razonan.
           </h1>
 
           <p className="pf-hero-bio pf-fade-up pf-stagger-3">{ME.bio}</p>

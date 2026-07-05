@@ -53,14 +53,20 @@ export function ProjectCard({ project, compact, revealDelay }) {
         {project.tech.map((t) => <span key={t} className="pf-tag">{t}</span>)}
       </div>
 
-      <div className="pf-project-links">
-        <a href={project.url} className="pf-project-link">
-          Ver demo <ExternalLink size={11} />
-        </a>
-        <a href={project.repo} className="pf-project-link muted">
-          Repositorio <ArrowUpRight size={11} />
-        </a>
-      </div>
+      {(project.url || project.repo) && (
+        <div className="pf-project-links">
+          {project.url && (
+            <a href={project.url} target="_blank" rel="noopener noreferrer" className="pf-project-link">
+              Ver demo <ExternalLink size={11} />
+            </a>
+          )}
+          {project.repo && (
+            <a href={project.repo} target="_blank" rel="noopener noreferrer" className="pf-project-link muted">
+              Repositorio <ArrowUpRight size={11} />
+            </a>
+          )}
+        </div>
+      )}
     </article>
   );
 }
