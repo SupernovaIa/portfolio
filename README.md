@@ -97,10 +97,11 @@ npm run preview     # sirve dist/ para verificar antes de desplegar
 
 ## Pendiente antes de publicar
 
-- [ ] **Contenido** — rellenar bio, proyectos reales y experiencia en `src/data/content.js`
-- [ ] **Formulario** — conseguir access key en web3forms.com y añadirla a `.env` (y al panel del hosting)
-- [ ] **SEO** — actualizar la URL canónica y `og:image` en `index.html` con el dominio real, y crear `public/og-image.png` (1200×630 px)
-- [ ] **Favicon** — sustituir `public/favicon.svg` por uno propio
+- [x] **Contenido** — bio, proyectos reales y experiencia en `src/data/content.js`
+- [x] **Favicon** — `public/favicon.svg` ya tiene el estilo orbital propio del sitio
+- [x] **og-image** — `public/og-image.png` (1200×630 px) generada con el mismo estilo visual
+- [ ] **Formulario** — conseguir access key en web3forms.com, copiar `.env.example` a `.env` y rellenar `VITE_WEB3FORMS_KEY` (y añadir la misma variable en el panel del hosting)
+- [x] **SEO** — apuntando a la URL de producción en Vercel (`index.html`: `canonical`, `og:url`, `og:image`, `twitter:image`); actualizar si conectas un dominio propio
 
 ## Licencia
 
