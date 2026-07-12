@@ -1,6 +1,13 @@
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { useReveal } from "../hooks/useReveal";
 
+const STATUS_LABELS = {
+  active: "en curso",
+  completed: "finalizado",
+  locked: "investigación",
+  available: "disponible",
+};
+
 export function SectionHeader({ eyebrow, title, subtitle }) {
   return (
     <header className="pf-section-header">
@@ -39,7 +46,7 @@ export function ProjectCard({ project, compact, revealDelay }) {
     >
       <div className="pf-project-header">
         <div className={`pf-project-status ${project.status}`}>
-          {project.status === "active" ? "en curso" : "finalizado"}
+          {STATUS_LABELS[project.status] ?? "finalizado"}
         </div>
         <span className="pf-project-year">{project.year}</span>
       </div>

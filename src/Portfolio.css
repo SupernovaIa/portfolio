@@ -280,6 +280,7 @@
 }
 .pf-project-status.completed { background: #0a3a4a; color: #22d3ee; }
 .pf-project-status.active { background: #0891b2; color: #ffffff; }
+.pf-project-status.locked { background: #1e293b; color: #94a3b8; }
 .pf-project-year {
   font-family: 'JetBrains Mono', monospace;
   font-size: var(--fs-xs); color: #64748b;
