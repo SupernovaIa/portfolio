@@ -73,34 +73,46 @@ export default function Contact() {
         </div>
 
         <div className="pf-contact-form">
-          <div className="pf-field">
-            <label>Nombre</label>
-            <input type="text" value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              placeholder="Cómo te llamas" />
-          </div>
-          <div className="pf-field">
-            <label>Email</label>
-            <input type="email" value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              placeholder="tu@email.com" />
-          </div>
-          <div className="pf-field">
-            <label>Mensaje</label>
-            <textarea rows="5" value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              placeholder="Cuéntame en qué andas..." />
-          </div>
-          <button
-            className="pf-btn primary full"
-            onClick={handleSubmit}
-            disabled={status === "loading" || status === "success"}
-          >
-            {status === "loading" && "Enviando…"}
-            {status === "success" && "✓ Mensaje enviado"}
-            {status === "error"   && "Error al enviar — intenta de nuevo"}
-            {status === "idle"    && <><span>Enviar mensaje</span><Send size={13} /></>}
-          </button>
+          {WEB3FORMS_KEY ? (
+            <>
+              <div className="pf-field">
+                <label>Nombre</label>
+                <input type="text" value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  placeholder="Cómo te llamas" />
+              </div>
+              <div className="pf-field">
+                <label>Email</label>
+                <input type="email" value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  placeholder="tu@email.com" />
+              </div>
+              <div className="pf-field">
+                <label>Mensaje</label>
+                <textarea rows="5" value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  placeholder="Cuéntame en qué andas..." />
+              </div>
+              <button
+                className="pf-btn primary full"
+                onClick={handleSubmit}
+                disabled={status === "loading" || status === "success"}
+              >
+                {status === "loading" && "Enviando…"}
+                {status === "success" && "✓ Mensaje enviado"}
+                {status === "error"   && "Error al enviar — intenta de nuevo"}
+                {status === "idle"    && <><span>Enviar mensaje</span><Send size={13} /></>}
+              </button>
+            </>
+          ) : (
+            <div className="pf-contact-fallback">
+              <h4>¿Hablamos?</h4>
+              <p>La forma más rápida de llegar a mí es por email. Te respondo en menos de 24h.</p>
+              <a className="pf-btn primary full" href={`mailto:${ME.email}`}>
+                <span>Escríbeme por email</span><Send size={13} />
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>

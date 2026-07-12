@@ -509,6 +509,13 @@
   border: 1px solid #1e293b;
   border-radius: 10px; padding: 24px;
 }
+.pf-contact-fallback h4 {
+  font-size: var(--fs-lg); color: #e2e8f0; margin: 0 0 8px;
+}
+.pf-contact-fallback p {
+  color: #94a3b8; font-size: var(--fs-sm); line-height: 1.6; margin: 0 0 20px;
+}
+
 .pf-field { margin-bottom: 16px; }
 .pf-field label {
   display: block;
