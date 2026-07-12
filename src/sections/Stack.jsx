@@ -31,7 +31,7 @@ export default function Stack() {
       <SectionHeader
         eyebrow="02 / stack"
         title="Mi sistema solar técnico"
-        subtitle="Lo que uso a diario, lo que toco de vez en cuando y lo que estoy aprendiendo. Pasa el ratón sobre cada planeta."
+        subtitle="Las herramientas con las que construyo sistemas de IA a diario. Pasa el ratón sobre cada planeta."
       />
 
       <div className="pf-stack-wrapper">
@@ -135,21 +135,7 @@ export default function Stack() {
             <span className="dot" style={{ background: STATUS_COLORS.completed.glow, boxShadow: `0 0 8px ${STATUS_COLORS.completed.glow}` }} />
             <div>
               <strong>Domino</strong>
-              <span>Lo uso a diario sin problema</span>
-            </div>
-          </div>
-          <div className="pf-stack-legend-item">
-            <span className="dot" style={{ background: STATUS_COLORS.active.glow, boxShadow: `0 0 8px ${STATUS_COLORS.active.glow}` }} />
-            <div>
-              <strong>Aprendiendo</strong>
-              <span>Profundizando ahora mismo</span>
-            </div>
-          </div>
-          <div className="pf-stack-legend-item">
-            <span className="dot" style={{ background: STATUS_COLORS.available.glow }} />
-            <div>
-              <strong>Tocado</strong>
-              <span>Conozco lo básico</span>
+              <span>Lo uso a diario para construir en producción</span>
             </div>
           </div>
         </aside>
