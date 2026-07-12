@@ -99,14 +99,37 @@ export const PROJECTS = [
   },
 ];
 
-// TODO: rellena con tu trayectoria real (no la pude sacar de LinkedIn, está tras login).
 // Formato: { role, company, period, description }
 export const EXPERIENCE = [
   {
-    role: "TODO: tu rol actual",
-    company: "TODO: empresa",
-    period: "2024 — actualidad",
-    description: "TODO: 1-2 frases sobre qué haces / has construido.",
+    role: "Arquitecto IA",
+    company: "Verymuch.Ai",
+    period: "may. 2026 — actualidad",
+    description: "Diseño de arquitecturas de sistemas de IA agénticos para producto y clientes.",
+  },
+  {
+    role: "AI Engineer",
+    company: "thePower",
+    period: "abr. 2026 — actualidad",
+    description: "Desarrollo de sistemas de IA generativa y agentes sobre la base de conocimiento interna del negocio.",
+  },
+  {
+    role: "AI Engineer",
+    company: "Nfq Advisory",
+    period: "sept. 2025 — abr. 2026",
+    description: "Diseñé y desplegué sistemas LLM agénticos (RAG, agentes y arquitecturas multiagente con LangChain y LangGraph) para clientes de varios sectores, con observabilidad (Langfuse) y evaluación (DeepEval, RAGAS). Monté pipelines de entrenamiento, versionado y despliegue con MLflow, Databricks y Docker sobre Azure con CI/CD.",
+  },
+  {
+    role: "AI Engineer",
+    company: "EY",
+    period: "may. 2025 — sept. 2025",
+    description: "Desarrollé sistemas de IA generativa en consultoría de gran escala: un chatbot conversacional con RAG, un buscador semántico sobre documentación interna y un pipeline de generación automática de documentos comerciales.",
+  },
+  {
+    role: "AI Engineer & Educator",
+    company: "thePower",
+    period: "oct. 2023 — abr. 2025",
+    description: "Identifiqué y desarrollé casos de uso de IA generativa para el negocio (RAG y chatbots sobre base de conocimiento interna). Creé e impartí formación en IA y datos para más de 2000 estudiantes, incluyendo materiales para certificaciones de Microsoft Azure.",
   },
 ];
 
