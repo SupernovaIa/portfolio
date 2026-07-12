@@ -3,7 +3,7 @@ import { useReveal } from "../hooks/useReveal";
 
 const STATUS_LABELS = {
   active: "en curso",
-  completed: "finalizado",
+  completed: "publicado",
   locked: "investigación",
   available: "disponible",
 };
@@ -46,7 +46,7 @@ export function ProjectCard({ project, compact, revealDelay }) {
     >
       <div className="pf-project-header">
         <div className={`pf-project-status ${project.status}`}>
-          {STATUS_LABELS[project.status] ?? "finalizado"}
+          {STATUS_LABELS[project.status] ?? "publicado"}
         </div>
         <span className="pf-project-year">{project.year}</span>
       </div>

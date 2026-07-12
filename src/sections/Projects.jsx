@@ -11,7 +11,7 @@ export default function Projects() {
   const filters = [
     { id: "all",       label: "Todos",       count: PROJECTS.length },
     { id: "active",    label: "En curso",    count: PROJECTS.filter((p) => p.status === "active").length },
-    { id: "completed", label: "Finalizados", count: PROJECTS.filter((p) => p.status === "completed").length },
+    { id: "completed", label: "Publicados", count: PROJECTS.filter((p) => p.status === "completed").length },
   ];
 
   return (
