@@ -105,13 +105,13 @@ export const EXPERIENCE = [
     role: "Arquitecto IA",
     company: "Verymuch.Ai",
     period: "may. 2026 — actualidad",
-    description: "Diseño de arquitecturas de sistemas de IA agénticos para producto y clientes.",
+    description: "Comunidad de arquitectos de IA enfocada en construir agentes con Claude.",
   },
   {
     role: "AI Engineer",
     company: "thePower",
     period: "abr. 2026 — actualidad",
-    description: "Desarrollo de sistemas de IA generativa y agentes sobre la base de conocimiento interna del negocio.",
+    description: "Desarrollo la parte de IA de la LMS de thePower, creo formación técnica para empresas tecnológicas y hago consultoría de inteligencia artificial.",
   },
   {
     role: "AI Engineer",
