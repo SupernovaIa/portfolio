@@ -26,6 +26,18 @@ export const ME = {
 // Proyectos reales extraídos de github.com/SupernovaIa.
 export const PROJECTS = [
   {
+    id: "salario-neto",
+    name: "Del bruto al neto",
+    tagline: "Calculadora de salario neto en España",
+    description: "Calculadora bruto→neto para España: Seguridad Social e IRPF (escala estatal + autonómica de las 15 CCAA) con desglose en vivo. Motor de cálculo puro y testeado, solo frontend.",
+    tech: ["React", "TypeScript", "Vite"],
+    year: "2026",
+    status: "completed",
+    featured: true,
+    url: "https://salario-neto-phi.vercel.app/",
+    repo: "https://github.com/SupernovaIa/salario-neto",
+  },
+  {
     id: "periodic-table",
     name: "Tabla periódica interactiva",
     tagline: "Cada elemento, con su ficha completa",
