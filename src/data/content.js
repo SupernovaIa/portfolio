@@ -27,8 +27,8 @@ export const ME = {
 export const PROJECTS = [
   {
     id: "salario-neto",
-    name: "Del bruto al neto",
-    tagline: "Calculadora de salario neto en España",
+    name: "Calculadora de salario neto",
+    tagline: "Del bruto al neto en España, con IRPF por comunidad",
     description: "Calculadora bruto→neto para España: Seguridad Social e IRPF (escala estatal + autonómica de las 15 CCAA) con desglose en vivo. Motor de cálculo puro y testeado, solo frontend.",
     tech: ["React", "TypeScript", "Vite"],
     year: "2026",
