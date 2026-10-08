@@ -31,7 +31,7 @@ export default function Home({ onNavigate }) {
             </div>
             <div className="pf-meta-item">
               <Code2 size={13} strokeWidth={1.5} />
-              <span>{PROJECTS.length} proyectos públicos</span>
+              <span>{PROJECTS.length} proyectos</span>
             </div>
           </div>
 

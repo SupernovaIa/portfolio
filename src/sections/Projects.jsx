@@ -19,7 +19,7 @@ export default function Projects() {
       <SectionHeader
         eyebrow="01 / proyectos"
         title="Cosas que he construido"
-        subtitle="Una selección de lo que tengo público. Desde herramientas internas hasta experimentos."
+        subtitle="Una selección de lo que construyo: lo publicado y lo que tengo entre manos."
       />
 
       <div className="pf-filters">
