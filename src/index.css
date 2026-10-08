@@ -1,3 +1,90 @@
+/* ====== THEME TOKENS ======
+   "Blueprint": cool editorial sheet on an engineering grid.
+   Light by default, dark via prefers-color-scheme or [data-theme="dark"]. */
+:root {
+  color-scheme: light;
+  --bg:        oklch(0.975 0.004 240);
+  --bg-2:      oklch(0.955 0.006 240);
+  --surface:   oklch(1 0 0);
+  --surface-2: oklch(0.965 0.005 240);
+  --ink:       oklch(0.21 0.02 248);
+  --muted:     oklch(0.47 0.02 242);
+  --faint:     oklch(0.62 0.015 242);
+  --line:      oklch(0.88 0.008 240);
+  --line-2:    oklch(0.82 0.01 240);
+  --teal:      oklch(0.52 0.1 200);   --teal-soft:   oklch(0.52 0.1 200 / .10);
+  --indigo:    oklch(0.48 0.18 278);  --indigo-soft: oklch(0.48 0.18 278 / .09);
+  --amber:     oklch(0.57 0.14 58);   --amber-soft:  oklch(0.75 0.14 70 / .16);
+  --slate:     oklch(0.37 0.03 255);  --slate-soft:  oklch(0.37 0.03 255 / .08);
+  --green:     oklch(0.55 0.13 150);  --green-soft:  oklch(0.55 0.13 150 / .12);
+  --later:     oklch(0.58 0.02 245);
+  --seam:      oklch(0.26 0.03 255);  --on-seam:     oklch(0.98 0.005 240);
+  --seam-glow: oklch(0.52 0.1 200 / .28);
+  --grid:      oklch(0.21 0.02 248 / .045);
+  --glow-a:    oklch(0.52 0.1 200 / .10);
+  --glow-b:    oklch(0.48 0.18 278 / .08);
+  --shadow: 0 1px 0 oklch(0.21 0.02 248 / .04), 0 12px 32px -16px oklch(0.21 0.02 248 / .18);
+
+  --f-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-body:    "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:    "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --spring: linear(0, 0.0439, 0.1461, 0.2736, 0.4054, 0.5291, 0.6382, 0.73, 0.8046, 0.8633, 0.908, 0.9412, 0.965, 0.9815, 0.9925, 0.9994, 1.0035, 1.0055, 1.0062, 1.0062, 1.0056, 1.0049, 1.004, 1.0032, 1.0025, 1.0019, 1.0014, 1.001, 1, 1);
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg:        oklch(0.155 0.01 245);
+    --bg-2:      oklch(0.18 0.012 245);
+    --surface:   oklch(0.2 0.013 245);
+    --surface-2: oklch(0.235 0.014 245);
+    --ink:       oklch(0.955 0.006 240);
+    --muted:     oklch(0.74 0.018 240);
+    --faint:     oklch(0.58 0.016 242);
+    --line:      oklch(0.3 0.014 245);
+    --line-2:    oklch(0.38 0.016 245);
+    --teal:      oklch(0.8 0.12 192);   --teal-soft:   oklch(0.8 0.12 192 / .11);
+    --indigo:    oklch(0.75 0.13 280);  --indigo-soft: oklch(0.75 0.13 280 / .12);
+    --amber:     oklch(0.83 0.14 75);   --amber-soft:  oklch(0.83 0.14 75 / .11);
+    --slate:     oklch(0.82 0.03 250);  --slate-soft:  oklch(0.82 0.03 250 / .08);
+    --green:     oklch(0.8 0.15 150);   --green-soft:  oklch(0.8 0.15 150 / .12);
+    --later:     oklch(0.62 0.02 245);
+    --seam:      oklch(0.93 0.02 245);  --on-seam:     oklch(0.17 0.015 250);
+    --seam-glow: oklch(0.8 0.12 192 / .35);
+    --grid:      oklch(0.955 0.006 240 / .04);
+    --glow-a:    oklch(0.8 0.12 192 / .10);
+    --glow-b:    oklch(0.75 0.13 280 / .10);
+    --shadow: 0 1px 0 oklch(1 0 0 / .03) inset, 0 20px 40px -24px oklch(0 0 0 / .6);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg:        oklch(0.155 0.01 245);
+  --bg-2:      oklch(0.18 0.012 245);
+  --surface:   oklch(0.2 0.013 245);
+  --surface-2: oklch(0.235 0.014 245);
+  --ink:       oklch(0.955 0.006 240);
+  --muted:     oklch(0.74 0.018 240);
+  --faint:     oklch(0.58 0.016 242);
+  --line:      oklch(0.3 0.014 245);
+  --line-2:    oklch(0.38 0.016 245);
+  --teal:      oklch(0.8 0.12 192);   --teal-soft:   oklch(0.8 0.12 192 / .11);
+  --indigo:    oklch(0.75 0.13 280);  --indigo-soft: oklch(0.75 0.13 280 / .12);
+  --amber:     oklch(0.83 0.14 75);   --amber-soft:  oklch(0.83 0.14 75 / .11);
+  --slate:     oklch(0.82 0.03 250);  --slate-soft:  oklch(0.82 0.03 250 / .08);
+  --green:     oklch(0.8 0.15 150);   --green-soft:  oklch(0.8 0.15 150 / .12);
+  --later:     oklch(0.62 0.02 245);
+  --seam:      oklch(0.93 0.02 245);  --on-seam:     oklch(0.17 0.015 250);
+  --seam-glow: oklch(0.8 0.12 192 / .35);
+  --grid:      oklch(0.955 0.006 240 / .04);
+  --glow-a:    oklch(0.8 0.12 192 / .10);
+  --glow-b:    oklch(0.75 0.13 280 / .10);
+  --shadow: 0 1px 0 oklch(1 0 0 / .03) inset, 0 20px 40px -24px oklch(0 0 0 / .6);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body, #root {
@@ -7,13 +94,16 @@ html, body, #root {
 }
 
 body {
-  background: #020617;
-  color: #e2e8f0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection { background: var(--teal); color: var(--bg); }
+
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #0a1019; }
-::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: #334155; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--line-2); }

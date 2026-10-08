@@ -8,14 +8,12 @@ export default function Home({ onNavigate }) {
     <section className="pf-section pf-home">
       <div className="pf-home-grid">
         <div className="pf-home-content">
-          <div className="pf-eyebrow pf-fade-up pf-stagger-1">
+          <div className="pf-eyebrow pill pf-fade-up pf-stagger-1">
             <span className="pf-eyebrow-dot" /> portfolio · {new Date().getFullYear()}
           </div>
 
           <h1 className="pf-hero-title pf-fade-up pf-stagger-2">
-            Construyo<br />
-            <span className="pf-accent">agentes de IA</span><br />
-            y sistemas que razonan.
+            Construyo <em className="pf-accent">agentes de IA</em> y sistemas que razonan.
           </h1>
 
           <p className="pf-hero-bio pf-fade-up pf-stagger-3">{ME.bio}</p>
@@ -45,9 +43,10 @@ export default function Home({ onNavigate }) {
           </div>
         </div>
 
-        <div className="pf-home-visual pf-fade-up pf-stagger-3">
+        <figure className="pf-home-visual pf-fade-up pf-stagger-3">
+          <div className="pf-home-visual-label"><span>python · llms · agentes</span><span>en órbita</span></div>
           <OrbitalBadge />
-        </div>
+        </figure>
       </div>
 
       <div className="pf-home-featured">

@@ -18,7 +18,7 @@ export default function Projects() {
     <section className="pf-section">
       <SectionHeader
         eyebrow="01 / proyectos"
-        title="Cosas que he construido"
+        title={<>Cosas que he <em>construido</em></>}
         subtitle="Una selección de lo que construyo: lo publicado y lo que tengo entre manos."
       />
 

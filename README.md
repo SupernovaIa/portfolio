@@ -1,6 +1,6 @@
 # Portfolio
 
-Portfolio personal con estilo orbital cyan/neón. Construido con Vite + React.
+Portfolio personal con estilo "Blueprint" (serif editorial sobre cuadrícula de ingeniería, tema claro/oscuro). Construido con Vite + React.
 
 ## Empezar
 
@@ -23,8 +23,8 @@ Todo el contenido del portfolio vive en `src/data/content.js`. Edita ese fichero
 Otras cosas que puedes querer cambiar:
 
 - **Favicon y metadatos**: edita `index.html` y `public/favicon.svg`
-- **Colores y tipografía**: están en `src/Portfolio.css`
-- **Configuración visual del holy graph** (radios, velocidades, colores por estado): en `src/data/config.js`
+- **Colores y tipografía**: los tokens (claro/oscuro) están en `src/index.css`; los estilos de componentes en `src/Portfolio.css`
+- **Configuración visual del holy graph** (radios, velocidades, colores por anillo): en `src/data/config.js`
 
 ## Estructura
 

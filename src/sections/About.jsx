@@ -6,7 +6,7 @@ export default function About() {
     <section className="pf-section">
       <SectionHeader
         eyebrow="03 / sobre mí"
-        title="Quién hay detrás"
+        title={<>Quién hay <em>detrás</em></>}
         subtitle="Un poco de contexto sobre cómo llegué aquí y a dónde voy."
       />
 
@@ -19,7 +19,7 @@ export default function About() {
           <h3 className="pf-side-title">Trayectoria</h3>
           <ol className="pf-timeline">
             {EXPERIENCE.map((e, i) => (
-              <Reveal as="li" key={i} delay={i} className="pf-timeline-item">
+              <Reveal as="li" key={i} delay={i} className={`pf-timeline-item${e.period.includes("actualidad") ? " current" : ""}`}>
                 <div className="pf-timeline-marker">
                   <span className="pf-timeline-dot" />
                   {i < EXPERIENCE.length - 1 && <span className="pf-timeline-line" />}

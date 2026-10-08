@@ -37,7 +37,7 @@ export default function Contact() {
     <section className="pf-section">
       <SectionHeader
         eyebrow="04 / contacto"
-        title="Hablemos"
+        title={<><em>Hablemos</em></>}
         subtitle="Si tienes un proyecto interesante, una pregunta técnica o solo quieres saludar."
       />
 

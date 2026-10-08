@@ -1,21 +1,27 @@
-import { Home, FolderGit2, Compass, User, Mail } from "lucide-react";
-
 export const VIEW = 900;
 export const CENTER = VIEW / 2;
 export const RING_RADII = [0, 130, 230, 340];
 export const ROTATION_SPEEDS = [0, 90, 140, 200];
 
-export const STATUS_COLORS = {
-  completed: { fill: "#0a3a4a", stroke: "#22d3ee", glow: "#22d3ee", text: "#e0f7fa" },
-  active:    { fill: "#0891b2", stroke: "#67e8f9", glow: "#67e8f9", text: "#ffffff" },
-  available: { fill: "#0a2540", stroke: "#475569", glow: "#94a3b8", text: "#cbd5e1" },
-  locked:    { fill: "#0a1628", stroke: "#1e293b", glow: "#1e293b", text: "#475569" },
-};
+// One colour per ring, from the theme tokens in index.css.
+export const RING_COLORS = [
+  { fill: "var(--seam)",        stroke: "var(--seam)",   text: "var(--on-seam)" },
+  { fill: "var(--surface)",     stroke: "var(--teal)",   text: "var(--ink)" },
+  { fill: "var(--surface)",     stroke: "var(--indigo)", text: "var(--ink)" },
+  { fill: "var(--surface)",     stroke: "var(--amber)",  text: "var(--ink)" },
+];
+
+export const RING_LABELS = [
+  { title: "Núcleo",                  hint: "El lenguaje con el que lo hago todo" },
+  { title: "Agentes y APIs",          hint: "Con lo que construyo cada día" },
+  { title: "Datos y modelos",         hint: "Dónde viven los datos y los modelos" },
+  { title: "Producción",              hint: "Patrones y plataforma para desplegar" },
+];
 
 export const NAV = [
-  { id: "home",     label: "Inicio",    Icon: Home,       path: "/" },
-  { id: "projects", label: "Proyectos", Icon: FolderGit2, path: "/projects" },
-  { id: "stack",    label: "Stack",     Icon: Compass,    path: "/stack" },
-  { id: "about",    label: "Sobre mí",  Icon: User,       path: "/about" },
-  { id: "contact",  label: "Contacto",  Icon: Mail,       path: "/contact" },
+  { id: "home",     label: "Inicio",    path: "/" },
+  { id: "projects", label: "Proyectos", path: "/projects" },
+  { id: "stack",    label: "Stack",     path: "/stack" },
+  { id: "about",    label: "Sobre mí",  path: "/about" },
+  { id: "contact",  label: "Contacto",  path: "/contact" },
 ];
