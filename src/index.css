@@ -17,7 +17,7 @@
   --teal-glow: rgba(34, 211, 238, .45);
   --indigo:    #a5b4fc;  --indigo-soft: rgba(165, 180, 252, .10);
   --amber:     #fcd34d;  --amber-soft:  rgba(252, 211, 77, .10);
-  --green:     #4ade80;  --green-soft:  rgba(74, 222, 128, .12);
+  --green:     #34d399;  --green-soft:  rgba(52, 211, 153, .12);
   --later:     #64748b;
   --seam:      #0891b2;  --on-seam:     #ffffff;
   --seam-glow: rgba(34, 211, 238, .35);
@@ -55,7 +55,7 @@
   --teal-glow: rgba(8, 145, 178, .22);
   --indigo:    #4f46e5;  --indigo-soft: rgba(79, 70, 229, .08);
   --amber:     #b45309;  --amber-soft:  rgba(217, 119, 6, .10);
-  --green:     #15803d;  --green-soft:  rgba(21, 128, 61, .12);
+  --green:     #059669;  --green-soft:  rgba(5, 150, 105, .12);
   --later:     #6c7d92;
   --seam:      #0891b2;  --on-seam:     #ffffff;
   --seam-glow: rgba(8, 145, 178, .25);
