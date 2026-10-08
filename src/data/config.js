@@ -25,3 +25,11 @@ export const NAV = [
   { id: "about",    label: "Sobre mí",  path: "/about" },
   { id: "contact",  label: "Contacto",  path: "/contact" },
 ];
+
+// Project areas: colour = kind of work, as in the stack rings.
+export const AREAS = {
+  ia:           { label: "IA y agentes",    color: "teal" },
+  datos:        { label: "Datos y ciencia", color: "green" },
+  web:          { label: "Web y producto",  color: "indigo" },
+  herramientas: { label: "Herramientas",    color: "amber" },
+};

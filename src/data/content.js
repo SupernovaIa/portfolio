@@ -27,6 +27,7 @@ export const ME = {
 export const PROJECTS = [
   {
     id: "leaf-os",
+    area: "ia",
     name: "Leaf OS",
     tagline: "Un workspace con IA nativa, no un lienzo en blanco",
     description: "Objetos tipados, vistas y dashboards con un agente integrado (Claude) que actúa por la misma ruta de escritura que tú: cada cambio es un evento que puedes deshacer. Expone sus herramientas por MCP y trae un sistema listo para usar. Repo privado, en fase de PoC.",
@@ -39,6 +40,7 @@ export const PROJECTS = [
   },
   {
     id: "f1-ml",
+    area: "datos",
     name: "Formula 1 ML",
     tagline: "Análisis, predicción y un chatbot sobre datos de F1",
     description: "Clustering de circuitos por perfil técnico (K-Means), predicción del ganador de carrera (XGBoost) y un dashboard React + FastAPI sobre datos de FastF1, con un chatbot RAG sobre documentos de carrera.",
@@ -51,6 +53,7 @@ export const PROJECTS = [
   },
   {
     id: "salario-neto",
+    area: "web",
     name: "Calculadora de salario neto",
     tagline: "Del bruto al neto en España, con IRPF por comunidad",
     description: "Calculadora bruto→neto para España: Seguridad Social e IRPF (escala estatal + autonómica de las 15 CCAA) con desglose en vivo. Motor de cálculo puro y testeado, solo frontend.",
@@ -63,6 +66,7 @@ export const PROJECTS = [
   },
   {
     id: "layout-studio",
+    area: "herramientas",
     name: "Layout Studio",
     tagline: "Markdown dentro, PDFs con tu marca fuera",
     description: "Estudio de maquetación consciente de marca: escribes en Markdown y sale un PDF con la identidad visual elegida. Sin backend: el motor en Python corre en el navegador con Pyodide (WebAssembly).",
@@ -75,6 +79,7 @@ export const PROJECTS = [
   },
   {
     id: "quillflow",
+    area: "ia",
     name: "QuillFlow",
     tagline: "Dicta en cualquier campo de texto de macOS",
     description: "App nativa de barra de menús: mantienes un atajo, hablas y el texto aparece donde está el cursor, transcrito con Gemini. Sin backend ni telemetría, con tu propia API key. Repo privado.",
@@ -87,6 +92,7 @@ export const PROJECTS = [
   },
   {
     id: "vitrine",
+    area: "web",
     name: "Vitrine",
     tagline: "Mi registro de pelis, series, libros y videojuegos",
     description: "Registro que cualquiera puede consultar, sin backend ni base de datos: cada entrada es un fichero Markdown y git es el almacenamiento, el historial y la copia de seguridad.",
@@ -99,6 +105,7 @@ export const PROJECTS = [
   },
   {
     id: "periodic-table",
+    area: "datos",
     name: "Tabla periódica interactiva",
     tagline: "Cada elemento, con su ficha completa",
     description: "Tabla periódica interactiva: haz clic en cualquier elemento para ver su perfil completo. Bilingüe ES/EN, sin build, HTML/CSS/JS puro.",
@@ -111,6 +118,7 @@ export const PROJECTS = [
   },
   {
     id: "pharma-cards",
+    area: "web",
     name: "Pharma Cards",
     tagline: "Fichas rápidas de fármacos para farmacéuticos",
     description: "Fichas de consulta rápida por principio activo: indicación, posología, interacciones y efectos adversos.",
@@ -123,6 +131,7 @@ export const PROJECTS = [
   },
   {
     id: "aura",
+    area: "herramientas",
     name: "Aura",
     tagline: "Un lenguaje de programación pequeño, hecho en Rust",
     description: "Lenguaje con sintaxis al estilo Python/Ruby, implementado como intérprete tree-walking en Rust. Un proyecto para entender desde dentro cómo funciona un lenguaje: lexer → parser → intérprete.",
@@ -135,6 +144,7 @@ export const PROJECTS = [
   },
   {
     id: "funko-mons",
+    area: "ia",
     name: "Funko-mons",
     tagline: "Generación y visor 3D de Funko Pops",
     description: "Pipeline generativo (imágenes → modelo 3D con Tripo) y visor interactivo en Next.js con react-three-fiber. En fase de investigación.",
@@ -147,6 +157,7 @@ export const PROJECTS = [
   },
   {
     id: "stellar-interior-model",
+    area: "datos",
     name: "Stellar Interior Model",
     tagline: "Modelo numérico del interior de una estrella masiva",
     description: "Modelo numérico del interior de una estrella masiva de secuencia principal, con núcleo convectivo y envoltura radiativa.",
@@ -159,6 +170,7 @@ export const PROJECTS = [
   },
   {
     id: "portfolio",
+    area: "web",
     name: "Este portfolio",
     tagline: "El sitio que estás viendo ahora mismo",
     description: "Mi portfolio personal como AI Engineer: React + Vite, con tema claro/oscuro, tokens de diseño en OKLCH y animaciones de entrada.",

@@ -1,6 +1,6 @@
 import { ArrowUpRight, MapPin, Calendar, Code2 } from "lucide-react";
 import { ME, PROJECTS } from "../data/content";
-import { ProjectCard } from "../components/Shared";
+import { ProjectCard, AreaLegend } from "../components/Shared";
 import OrbitalBadge from "../components/OrbitalBadge";
 
 export default function Home({ onNavigate }) {
@@ -20,15 +20,15 @@ export default function Home({ onNavigate }) {
 
           <div className="pf-hero-meta pf-fade-up pf-stagger-4">
             <div className="pf-meta-item">
-              <MapPin size={13} strokeWidth={1.5} />
+              <MapPin size={13} strokeWidth={1.5} className="ic-teal" />
               <span>{ME.location}</span>
             </div>
             <div className="pf-meta-item">
-              <Calendar size={13} strokeWidth={1.5} />
+              <Calendar size={13} strokeWidth={1.5} className="ic-indigo" />
               <span>{ME.yearsOfExperience} años de experiencia</span>
             </div>
             <div className="pf-meta-item">
-              <Code2 size={13} strokeWidth={1.5} />
+              <Code2 size={13} strokeWidth={1.5} className="ic-amber" />
               <span>{PROJECTS.length} proyectos</span>
             </div>
           </div>
@@ -51,6 +51,7 @@ export default function Home({ onNavigate }) {
 
       <div className="pf-home-featured">
         <h2 className="pf-section-label">Proyectos destacados</h2>
+        <AreaLegend />
         <div className="pf-featured-grid">
           {PROJECTS.filter((p) => p.featured).map((p, i) => (
             <ProjectCard key={p.id} project={p} compact revealDelay={i} />

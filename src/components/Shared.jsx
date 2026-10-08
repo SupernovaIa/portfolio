@@ -1,5 +1,6 @@
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import { useReveal } from "../hooks/useReveal";
+import { AREAS } from "../data/config";
 
 const STATUS_LABELS = {
   active: "en curso",
@@ -35,20 +36,36 @@ export function Reveal({ as: Tag = "div", delay = 0, className = "", children, .
   );
 }
 
+export function AreaLegend() {
+  return (
+    <div className="pf-area-legend">
+      {Object.entries(AREAS).map(([id, a]) => (
+        <span key={id} className={`pf-area accent-${a.color}`}>
+          <i aria-hidden /> {a.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function ProjectCard({ project, compact, revealDelay }) {
   const { ref, shown } = useReveal();
   const style = revealDelay ? { "--reveal-delay": revealDelay } : undefined;
+  const area = AREAS[project.area];
   return (
     <article
       ref={ref}
       style={style}
-      className={`pf-project pf-reveal ${shown ? "in" : ""} ${compact ? "compact" : ""}`}
+      className={`pf-project pf-reveal accent-${area?.color ?? "teal"} ${shown ? "in" : ""} ${compact ? "compact" : ""}`}
     >
       <div className="pf-project-header">
         <div className={`pf-project-status ${project.status}`}>
           {STATUS_LABELS[project.status] ?? "publicado"}
         </div>
-        <span className="pf-project-year">{project.year}</span>
+        <span className="pf-project-year">
+          {area && <span className="pf-project-area"><i aria-hidden />{area.label} · </span>}
+          {project.year}
+        </span>
       </div>
 
       <h3 className="pf-project-name">{project.name}</h3>

@@ -88,7 +88,7 @@ export default function Stack() {
           </svg>
 
           {detail && (
-            <div className="pf-stack-detail">
+            <div className="pf-stack-detail" style={{ "--ring-color": RING_COLORS[detail.ring].stroke }}>
               <div className="pf-stack-detail-status">{RING_LABELS[detail.ring].title}</div>
               <h4>{detail.name}</h4>
               <p>{detail.description}</p>

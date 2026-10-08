@@ -27,6 +27,7 @@
   --top-glow:  #0a1628;
   --glow-a:    rgba(34, 211, 238, .08);
   --glow-b:    rgba(99, 102, 241, .07);
+  --glow-c:    rgba(252, 211, 77, .045);
   --shadow:    0 1px 0 rgba(255, 255, 255, .02) inset, 0 20px 40px -24px rgba(0, 0, 0, .6);
   --text-glow: 0 0 24px rgba(34, 211, 238, .4);
 
@@ -64,6 +65,7 @@
   --top-glow:  #f2f6fa;
   --glow-a:    rgba(8, 145, 178, .08);
   --glow-b:    rgba(79, 70, 229, .05);
+  --glow-c:    rgba(217, 119, 6, .05);
   --shadow:    0 1px 0 rgba(19, 36, 58, .04), 0 12px 28px -18px rgba(19, 36, 58, .28);
   --text-glow: none;
 }

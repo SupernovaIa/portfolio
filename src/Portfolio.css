@@ -44,7 +44,8 @@
   content: ""; position: absolute; inset: -20vh -10vw auto; height: 80vh; z-index: -1; pointer-events: none;
   background:
     radial-gradient(40% 50% at 30% 30%, var(--glow-a), transparent 70%),
-    radial-gradient(35% 45% at 85% 10%, var(--glow-b), transparent 70%);
+    radial-gradient(35% 45% at 85% 10%, var(--glow-b), transparent 70%),
+    radial-gradient(30% 40% at 60% 55%, var(--glow-c), transparent 70%);
 }
 
 /* ====== SIDEBAR ====== */
@@ -99,7 +100,8 @@
 /* Vertical guide behind the dots */
 .pf-nav::before {
   content: ""; position: absolute; left: 17px; top: 12px; bottom: 12px;
-  width: 1px; background: var(--line);
+  width: 1px; background: linear-gradient(var(--teal), var(--indigo) 55%, var(--amber));
+  opacity: .45;
 }
 .pf-nav-rail {
   position: absolute;
@@ -253,6 +255,8 @@
   font-variant-numeric: tabular-nums;
 }
 .pf-meta-item svg { color: var(--teal); }
+.pf-meta-item svg.ic-indigo { color: var(--indigo); }
+.pf-meta-item svg.ic-amber  { color: var(--amber); }
 .pf-hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .pf-home-visual {
@@ -322,6 +326,23 @@
   font-family: var(--f-mono);
   font-size: var(--fs-xs); opacity: .7;
 }
+/* Area accents: colour = kind of work */
+.accent-teal   { --accent: var(--teal);   --accent-soft: var(--teal-soft); }
+.accent-indigo { --accent: var(--indigo); --accent-soft: var(--indigo-soft); }
+.accent-amber  { --accent: var(--amber);  --accent-soft: var(--amber-soft); }
+.accent-green  { --accent: var(--green);  --accent-soft: var(--green-soft); }
+
+.pf-area-legend {
+  display: flex; flex-wrap: wrap; gap: 8px 18px;
+  margin: -8px 0 20px;
+  font-size: var(--fs-xs); color: var(--muted);
+}
+.pf-area { display: inline-flex; align-items: center; gap: 8px; }
+.pf-area i {
+  display: inline-block; width: 12px; height: 12px; border-radius: 3px;
+  border: 1.5px solid var(--accent); background: var(--accent-soft);
+}
+
 .pf-projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -334,8 +355,16 @@
   border-radius: 18px; padding: 24px;
   box-shadow: var(--shadow);
   display: flex; flex-direction: column; gap: 10px;
+  overflow: hidden;
 }
-.pf-project:hover { border-color: var(--teal); box-shadow: 0 8px 28px color-mix(in srgb, var(--teal-glow) 30%, transparent); }
+.pf-project::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 20%, transparent));
+}
+.pf-project:hover {
+  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--accent) 18%, transparent);
+}
 .pf-project.compact { padding: 20px; }
 .pf-project-header {
   display: flex; justify-content: space-between; align-items: center;
@@ -348,8 +377,8 @@
   border-radius: 6px; white-space: nowrap;
 }
 .pf-project-status.completed {
-  background: var(--teal-soft); color: var(--teal);
-  border: 1px solid color-mix(in oklch, var(--teal) 35%, transparent);
+  background: var(--green-soft); color: var(--green);
+  border: 1px solid color-mix(in srgb, var(--green) 35%, transparent);
 }
 .pf-project-status.active {
   background: var(--seam); color: var(--on-seam);
@@ -362,6 +391,11 @@
   font-family: var(--f-mono);
   font-size: var(--fs-xs); color: var(--faint);
   font-variant-numeric: tabular-nums;
+}
+.pf-project-area { color: var(--accent); }
+.pf-project-area i {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); margin-right: 6px; vertical-align: 1px;
 }
 .pf-project-name {
   font-family: var(--f-display); font-weight: 400;
@@ -380,8 +414,10 @@
 .pf-tag {
   font-family: var(--f-mono);
   font-size: 11.5px; padding: 3px 9px;
-  background: var(--surface-2); color: color-mix(in srgb, var(--teal) 70%, var(--ink));
-  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--accent-soft, var(--surface-2));
+  color: color-mix(in srgb, var(--accent, var(--teal)) 75%, var(--ink));
+  border: 1px solid color-mix(in srgb, var(--accent, var(--teal)) 22%, transparent);
+  border-radius: 8px;
   white-space: nowrap;
 }
 .pf-project-links {
@@ -390,7 +426,7 @@
 }
 .pf-project-link {
   display: inline-flex; align-items: center; gap: 5px;
-  color: var(--teal); font-size: var(--fs-xs); text-decoration: none;
+  color: var(--accent, var(--teal)); font-size: var(--fs-xs); text-decoration: none;
   font-family: var(--f-mono);
 }
 .pf-project-link:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -425,16 +461,16 @@
   width: min(260px, calc(100% - 32px));
   background: color-mix(in srgb, var(--bg-2) 94%, transparent);
   color: var(--ink);
-  border: 1px solid var(--teal);
+  border: 1px solid var(--ring-color, var(--teal));
   border-radius: 14px; padding: 14px 16px;
   backdrop-filter: blur(12px);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--teal-glow) 45%, transparent), var(--shadow);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--ring-color, var(--teal)) 22%, transparent), var(--shadow);
 }
 .pf-stack-detail-status {
   display: inline-block;
   font-family: var(--f-mono);
   font-size: 10.5px; text-transform: uppercase;
-  letter-spacing: var(--tracking-wider); color: var(--teal);
+  letter-spacing: var(--tracking-wider); color: var(--ring-color, var(--teal));
 }
 .pf-stack-detail h4 {
   margin: 4px 0 4px;
@@ -503,6 +539,10 @@
   background: linear-gradient(90deg, var(--line-2), transparent);
 }
 .pf-timeline { list-style: none; padding: 0; margin: 0; }
+.pf-timeline-item:nth-child(4n+1) { --accent: var(--teal);   --accent-soft: var(--teal-soft); }
+.pf-timeline-item:nth-child(4n+2) { --accent: var(--indigo); --accent-soft: var(--indigo-soft); }
+.pf-timeline-item:nth-child(4n+3) { --accent: var(--amber);  --accent-soft: var(--amber-soft); }
+.pf-timeline-item:nth-child(4n+4) { --accent: var(--green);  --accent-soft: var(--green-soft); }
 .pf-timeline-item { display: flex; gap: 18px; padding-bottom: 28px; }
 .pf-timeline-marker {
   display: flex; flex-direction: column; align-items: center;
@@ -511,15 +551,15 @@
 .pf-timeline-dot {
   width: 14px; height: 14px; border-radius: 50%;
   margin-top: 2px;
-  background: var(--surface); border: 1.5px solid var(--line-2);
+  background: var(--accent-soft); border: 1.5px solid var(--accent);
 }
 .pf-timeline-item.current .pf-timeline-dot {
-  background: var(--teal); border-color: var(--teal);
-  box-shadow: 0 0 0 5px var(--teal-soft), 0 0 12px var(--teal-glow);
+  background: var(--accent); border-color: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft), 0 0 12px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 .pf-timeline-line {
   flex: 1; width: 2px; min-height: 40px;
-  background: var(--line);
+  background: linear-gradient(var(--accent), var(--line));
   margin-top: 6px; margin-bottom: -26px;
 }
 .pf-timeline-period {
@@ -532,7 +572,7 @@
   font-family: var(--f-display); font-weight: 400;
   font-size: 1.6rem; line-height: 1.1; color: var(--title);
 }
-.pf-timeline-company { font-size: var(--fs-sm); color: var(--teal); font-weight: 500; }
+.pf-timeline-company { font-size: var(--fs-sm); color: var(--accent, var(--teal)); font-weight: 500; }
 .pf-timeline-content p {
   margin: 8px 0 0; font-size: var(--fs-sm);
   line-height: var(--lh-normal); color: var(--muted);
@@ -579,7 +619,8 @@
   margin-bottom: 8px; transition: border-color .2s;
 }
 .pf-contact-social:hover { border-color: var(--line-2); }
-.pf-contact-social svg:first-of-type { color: var(--teal); }
+.pf-contact-social svg:first-of-type { color: var(--indigo); }
+.pf-contact-social + .pf-contact-social svg:first-of-type { color: var(--teal); }
 .pf-contact-social div { flex: 1; display: flex; flex-direction: column; min-width: 0; }
 .pf-contact-social strong { font-size: var(--fs-sm); font-weight: 600; }
 .pf-contact-social span { font-family: var(--f-mono); font-size: var(--fs-xs); color: var(--muted); overflow-wrap: anywhere; }

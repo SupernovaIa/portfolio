@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { PROJECTS } from "../data/content";
-import { SectionHeader, ProjectCard } from "../components/Shared";
+import { SectionHeader, ProjectCard, AreaLegend } from "../components/Shared";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
@@ -33,6 +33,8 @@ export default function Projects() {
           </button>
         ))}
       </div>
+
+      <AreaLegend />
 
       <div className="pf-projects-grid">
         {filtered.map((p, i) => (
