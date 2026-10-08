@@ -1,6 +1,6 @@
 /* ====== THEME TOKENS ======
    Dark by default: the original deep navy + neon cyan, on a faint engineering grid.
-   Light is opt-in ([data-theme="light"]): warm paper and ink, no glows. */
+   Light is opt-in ([data-theme="light"]): misty blue-grey with navy ink and the same brand cyan. */
 :root {
   color-scheme: dark;
   --bg:        #020617;
@@ -40,31 +40,31 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg:        #faf9f5;
-  --bg-2:      #f3f1ea;
-  --surface:   #ffffff;
-  --surface-2: #f5f3ec;
-  --ink:       #1f1e1b;
-  --title:     #141413;
-  --muted:     #5e5b53;
-  --faint:     #8a867c;
-  --line:      #e6e2d8;
-  --line-2:    #d5d0c3;
-  --teal:      #0e7490;  --teal-soft:   rgba(14, 116, 144, .08);
-  --teal-glow: transparent;
-  --indigo:    #4f46e5;  --indigo-soft: rgba(79, 70, 229, .07);
+  --bg:        #e8edf3;
+  --bg-2:      #dde4ec;
+  --surface:   #f3f6f9;
+  --surface-2: #e5ebf1;
+  --ink:       #1b2b40;
+  --title:     #0b1a2e;
+  --muted:     #4a5b70;
+  --faint:     #6c7d92;
+  --line:      #cdd6e1;
+  --line-2:    #b6c2d1;
+  --teal:      #0891b2;  --teal-soft:   rgba(8, 145, 178, .10);
+  --teal-glow: rgba(8, 145, 178, .22);
+  --indigo:    #4f46e5;  --indigo-soft: rgba(79, 70, 229, .08);
   --amber:     #b45309;  --amber-soft:  rgba(217, 119, 6, .10);
-  --green:     #15803d;  --green-soft:  rgba(21, 128, 61, .10);
-  --later:     #8a867c;
-  --seam:      #1f1e1b;  --on-seam:     #faf9f5;
-  --seam-glow: rgba(31, 30, 27, .18);
-  --btn-bg:    #1f1e1b;  --btn-ink:     #faf9f5;  --btn-border: #1f1e1b;
-  --btn-bg-hover: #3a3833;
-  --grid:      rgba(31, 30, 27, .04);
-  --top-glow:  #faf9f5;
-  --glow-a:    rgba(14, 116, 144, .05);
-  --glow-b:    rgba(217, 119, 6, .04);
-  --shadow:    0 1px 0 rgba(31, 30, 27, .03), 0 10px 28px -16px rgba(31, 30, 27, .16);
+  --green:     #15803d;  --green-soft:  rgba(21, 128, 61, .12);
+  --later:     #6c7d92;
+  --seam:      #0891b2;  --on-seam:     #ffffff;
+  --seam-glow: rgba(8, 145, 178, .25);
+  --btn-bg:    #0891b2;  --btn-ink:     #ffffff;  --btn-border: #0891b2;
+  --btn-bg-hover: #0e7490;
+  --grid:      rgba(19, 36, 58, .05);
+  --top-glow:  #f2f6fa;
+  --glow-a:    rgba(8, 145, 178, .08);
+  --glow-b:    rgba(79, 70, 229, .05);
+  --shadow:    0 1px 0 rgba(19, 36, 58, .04), 0 12px 28px -18px rgba(19, 36, 58, .28);
   --text-glow: none;
 }
 
