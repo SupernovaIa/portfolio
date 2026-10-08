@@ -1,6 +1,6 @@
 # Portfolio
 
-Portfolio personal con estilo "Blueprint" (serif editorial sobre cuadrícula de ingeniería, tema claro/oscuro). Construido con Vite + React.
+Portfolio personal con estilo orbital cyan sobre azul marino (tema oscuro por defecto y claro opcional). Construido con Vite + React.
 
 ## Empezar
 

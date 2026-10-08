@@ -2,14 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 
 const STORAGE_KEY = "pf-theme";
 
-function systemTheme() {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
-// The initial data-theme is set by an inline script in index.html before paint.
+// Dark is the default; a saved choice is applied by an inline script in index.html before paint.
 export function useTheme() {
   const [theme, setTheme] = useState(
-    () => document.documentElement.getAttribute("data-theme") ?? systemTheme()
+    () => document.documentElement.getAttribute("data-theme") ?? "dark"
   );
 
   useEffect(() => {

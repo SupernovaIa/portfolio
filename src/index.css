@@ -1,29 +1,34 @@
 /* ====== THEME TOKENS ======
-   "Blueprint": cool editorial sheet on an engineering grid.
-   Light by default, dark via prefers-color-scheme or [data-theme="dark"]. */
+   Dark by default: the original deep navy + neon cyan, on a faint engineering grid.
+   Light is opt-in ([data-theme="light"]): warm paper and ink, no glows. */
 :root {
-  color-scheme: light;
-  --bg:        oklch(0.975 0.004 240);
-  --bg-2:      oklch(0.955 0.006 240);
-  --surface:   oklch(1 0 0);
-  --surface-2: oklch(0.965 0.005 240);
-  --ink:       oklch(0.21 0.02 248);
-  --muted:     oklch(0.47 0.02 242);
-  --faint:     oklch(0.62 0.015 242);
-  --line:      oklch(0.88 0.008 240);
-  --line-2:    oklch(0.82 0.01 240);
-  --teal:      oklch(0.52 0.1 200);   --teal-soft:   oklch(0.52 0.1 200 / .10);
-  --indigo:    oklch(0.48 0.18 278);  --indigo-soft: oklch(0.48 0.18 278 / .09);
-  --amber:     oklch(0.57 0.14 58);   --amber-soft:  oklch(0.75 0.14 70 / .16);
-  --slate:     oklch(0.37 0.03 255);  --slate-soft:  oklch(0.37 0.03 255 / .08);
-  --green:     oklch(0.55 0.13 150);  --green-soft:  oklch(0.55 0.13 150 / .12);
-  --later:     oklch(0.58 0.02 245);
-  --seam:      oklch(0.26 0.03 255);  --on-seam:     oklch(0.98 0.005 240);
-  --seam-glow: oklch(0.52 0.1 200 / .28);
-  --grid:      oklch(0.21 0.02 248 / .045);
-  --glow-a:    oklch(0.52 0.1 200 / .10);
-  --glow-b:    oklch(0.48 0.18 278 / .08);
-  --shadow: 0 1px 0 oklch(0.21 0.02 248 / .04), 0 12px 32px -16px oklch(0.21 0.02 248 / .18);
+  color-scheme: dark;
+  --bg:        #020617;
+  --bg-2:      #0a1019;
+  --surface:   rgba(10, 22, 40, 0.55);
+  --surface-2: #0f172a;
+  --ink:       #e2e8f0;
+  --title:     #e0f7fa;
+  --muted:     #94a3b8;
+  --faint:     #64748b;
+  --line:      #1e293b;
+  --line-2:    #334155;
+  --teal:      #22d3ee;  --teal-soft:   rgba(34, 211, 238, .10);
+  --teal-glow: rgba(34, 211, 238, .45);
+  --indigo:    #a5b4fc;  --indigo-soft: rgba(165, 180, 252, .10);
+  --amber:     #fcd34d;  --amber-soft:  rgba(252, 211, 77, .10);
+  --green:     #4ade80;  --green-soft:  rgba(74, 222, 128, .12);
+  --later:     #64748b;
+  --seam:      #0891b2;  --on-seam:     #ffffff;
+  --seam-glow: rgba(34, 211, 238, .35);
+  --btn-bg:    #0891b2;  --btn-ink:     #ffffff;  --btn-border: #22d3ee;
+  --btn-bg-hover: #0e7490;
+  --grid:      rgba(148, 163, 184, .045);
+  --top-glow:  #0a1628;
+  --glow-a:    rgba(34, 211, 238, .08);
+  --glow-b:    rgba(99, 102, 241, .07);
+  --shadow:    0 1px 0 rgba(255, 255, 255, .02) inset, 0 20px 40px -24px rgba(0, 0, 0, .6);
+  --text-glow: 0 0 24px rgba(34, 211, 238, .4);
 
   --f-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --f-body:    "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -33,56 +38,34 @@
   --ease-out: cubic-bezier(.22, 1, .36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --bg:        oklch(0.155 0.01 245);
-    --bg-2:      oklch(0.18 0.012 245);
-    --surface:   oklch(0.2 0.013 245);
-    --surface-2: oklch(0.235 0.014 245);
-    --ink:       oklch(0.955 0.006 240);
-    --muted:     oklch(0.74 0.018 240);
-    --faint:     oklch(0.58 0.016 242);
-    --line:      oklch(0.3 0.014 245);
-    --line-2:    oklch(0.38 0.016 245);
-    --teal:      oklch(0.8 0.12 192);   --teal-soft:   oklch(0.8 0.12 192 / .11);
-    --indigo:    oklch(0.75 0.13 280);  --indigo-soft: oklch(0.75 0.13 280 / .12);
-    --amber:     oklch(0.83 0.14 75);   --amber-soft:  oklch(0.83 0.14 75 / .11);
-    --slate:     oklch(0.82 0.03 250);  --slate-soft:  oklch(0.82 0.03 250 / .08);
-    --green:     oklch(0.8 0.15 150);   --green-soft:  oklch(0.8 0.15 150 / .12);
-    --later:     oklch(0.62 0.02 245);
-    --seam:      oklch(0.93 0.02 245);  --on-seam:     oklch(0.17 0.015 250);
-    --seam-glow: oklch(0.8 0.12 192 / .35);
-    --grid:      oklch(0.955 0.006 240 / .04);
-    --glow-a:    oklch(0.8 0.12 192 / .10);
-    --glow-b:    oklch(0.75 0.13 280 / .10);
-    --shadow: 0 1px 0 oklch(1 0 0 / .03) inset, 0 20px 40px -24px oklch(0 0 0 / .6);
-  }
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --bg:        oklch(0.155 0.01 245);
-  --bg-2:      oklch(0.18 0.012 245);
-  --surface:   oklch(0.2 0.013 245);
-  --surface-2: oklch(0.235 0.014 245);
-  --ink:       oklch(0.955 0.006 240);
-  --muted:     oklch(0.74 0.018 240);
-  --faint:     oklch(0.58 0.016 242);
-  --line:      oklch(0.3 0.014 245);
-  --line-2:    oklch(0.38 0.016 245);
-  --teal:      oklch(0.8 0.12 192);   --teal-soft:   oklch(0.8 0.12 192 / .11);
-  --indigo:    oklch(0.75 0.13 280);  --indigo-soft: oklch(0.75 0.13 280 / .12);
-  --amber:     oklch(0.83 0.14 75);   --amber-soft:  oklch(0.83 0.14 75 / .11);
-  --slate:     oklch(0.82 0.03 250);  --slate-soft:  oklch(0.82 0.03 250 / .08);
-  --green:     oklch(0.8 0.15 150);   --green-soft:  oklch(0.8 0.15 150 / .12);
-  --later:     oklch(0.62 0.02 245);
-  --seam:      oklch(0.93 0.02 245);  --on-seam:     oklch(0.17 0.015 250);
-  --seam-glow: oklch(0.8 0.12 192 / .35);
-  --grid:      oklch(0.955 0.006 240 / .04);
-  --glow-a:    oklch(0.8 0.12 192 / .10);
-  --glow-b:    oklch(0.75 0.13 280 / .10);
-  --shadow: 0 1px 0 oklch(1 0 0 / .03) inset, 0 20px 40px -24px oklch(0 0 0 / .6);
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg:        #faf9f5;
+  --bg-2:      #f3f1ea;
+  --surface:   #ffffff;
+  --surface-2: #f5f3ec;
+  --ink:       #1f1e1b;
+  --title:     #141413;
+  --muted:     #5e5b53;
+  --faint:     #8a867c;
+  --line:      #e6e2d8;
+  --line-2:    #d5d0c3;
+  --teal:      #0e7490;  --teal-soft:   rgba(14, 116, 144, .08);
+  --teal-glow: transparent;
+  --indigo:    #4f46e5;  --indigo-soft: rgba(79, 70, 229, .07);
+  --amber:     #b45309;  --amber-soft:  rgba(217, 119, 6, .10);
+  --green:     #15803d;  --green-soft:  rgba(21, 128, 61, .10);
+  --later:     #8a867c;
+  --seam:      #1f1e1b;  --on-seam:     #faf9f5;
+  --seam-glow: rgba(31, 30, 27, .18);
+  --btn-bg:    #1f1e1b;  --btn-ink:     #faf9f5;  --btn-border: #1f1e1b;
+  --btn-bg-hover: #3a3833;
+  --grid:      rgba(31, 30, 27, .04);
+  --top-glow:  #faf9f5;
+  --glow-a:    rgba(14, 116, 144, .05);
+  --glow-b:    rgba(217, 119, 6, .04);
+  --shadow:    0 1px 0 rgba(31, 30, 27, .03), 0 10px 28px -16px rgba(31, 30, 27, .16);
+  --text-glow: none;
 }
 
 *, *::before, *::after { box-sizing: border-box; }

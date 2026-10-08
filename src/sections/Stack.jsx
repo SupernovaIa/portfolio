@@ -42,8 +42,9 @@ export default function Stack() {
                 key={ring}
                 cx={CENTER} cy={CENTER}
                 r={RING_RADII[ring]}
-                fill="none" stroke="var(--line-2)"
-                strokeWidth="1.2"
+                fill="none" stroke="var(--teal)"
+                strokeWidth={ring === 1 ? 1.5 : 0.8}
+                strokeOpacity={ring === 1 ? 0.55 : 0.25}
                 strokeDasharray={ring === 3 ? "5 6" : undefined}
               />
             ))}

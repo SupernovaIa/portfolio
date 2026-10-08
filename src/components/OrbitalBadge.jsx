@@ -1,9 +1,9 @@
 export default function OrbitalBadge() {
   return (
     <svg viewBox="0 0 400 400" className="pf-orbital" role="img" aria-label="Diagrama orbital">
-      <circle cx="200" cy="200" r="80"  fill="none" stroke="var(--teal)"   strokeOpacity="0.7" strokeWidth="1.5" />
-      <circle cx="200" cy="200" r="130" fill="none" stroke="var(--line-2)" strokeWidth="1" />
-      <circle cx="200" cy="200" r="175" fill="none" stroke="var(--line-2)" strokeWidth="1" strokeDasharray="4 5" />
+      <circle cx="200" cy="200" r="80"  fill="none" stroke="var(--teal)" strokeOpacity="0.6" strokeWidth="1.5" />
+      <circle cx="200" cy="200" r="130" fill="none" stroke="var(--teal)" strokeOpacity="0.3" strokeWidth="0.8" />
+      <circle cx="200" cy="200" r="175" fill="none" stroke="var(--teal)" strokeOpacity="0.18" strokeWidth="0.6" strokeDasharray="4 5" />
 
       <circle cx="200" cy="200" r="104" fill="var(--teal-soft)" opacity="0.6" />
       <circle cx="200" cy="200" r="42" fill="var(--seam)" />
